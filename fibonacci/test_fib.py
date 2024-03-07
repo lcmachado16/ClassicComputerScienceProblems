@@ -1,4 +1,4 @@
-from math import sqrt
+from math import sqrt, floor
 
 def fib(n):
     if n < 2: 
@@ -13,9 +13,13 @@ def test_fib():
   for i in range(0, len(fibonacci_20)): 
     assert fib(i) == fibonacci_20[i]
 
-  assert(fib(12),fibequation(12))
-  assert(fib(10),fibequation(10))
 
+  assert fib(12) == floor(fibequation(12))
+  assert fib(25) == floor(fibequation(25))
+  assert fib(30) == floor(fibequation(30))
+
+  for i in range(20,50):
+       assert fib(i) == floor(fibequation(i))
 
   print("All test cases pass")
 
